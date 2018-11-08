@@ -9,17 +9,64 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.key{
+  background: #000000;
+  color: #ffffff;
+  border-radius: 5px;
+  width: 30px ; 
+  height: 30px;
+  line-height: 1.9;
+  font-weight: bold;
+  float: left ;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.keyboardContainer{
+  width: 300px;
+  flex-direction: column;
+  align-items:  center;
+}
+
+.key[disabled] {
+  background: #ccc;
+  opacity: 0.7;
+}
+
+.error {
+  background: red !important;
+}
+
+.win{
+  color :green;
+}
+
+.lose{
+  color :  red;
+}
+
+.reset{
+  background: indigo;
+  color : #ffffff;
+  padding:  10px;
+  cursor: pointer;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 @keyframes App-logo-spin {
