@@ -112,8 +112,6 @@ class App extends Component {
       return;
     }
 
-    
-
     let item = `.item_${key}`;
     let count = this.char_count(key);
     console.log(count);
@@ -121,16 +119,19 @@ class App extends Component {
       this.usedLetters.add(key.toUpperCase());
       this.computeDisplay(this.state.word);
       this.setState({
-        found: this.state.found - count
+        found  : this.state.found - count , 
+        score  : this.state.score + 2
       });
     } else {
       let element = document.getElementById(`key_${key}`);
       element.className += " error";
+      this.setState({
+        attempt: this.state.attempt - 1,
+        score  : this.state.score - 1
+      });
     }
     document.getElementById(`key_${key}`).setAttribute("disabled", "disabled");
-    this.setState({
-      attempt: this.state.attempt - 1
-    });
+    
 
     // check if the player found the word .
     if (this.state.found === 0) {
