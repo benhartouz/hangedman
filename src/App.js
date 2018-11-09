@@ -73,8 +73,8 @@ class App extends Component {
     let randomNum = this.getRandomArbitrary(1, 9);
     let word = words[randomNum];
     word = word.toUpperCase();
-    console.log("word:", word);
-    let placeholder = this.computeDisplay(word);
+    console.log("word:",word);
+    this.computeDisplay(word);
     this.setState({
       word: word,
       found: word.length - 1
@@ -177,6 +177,7 @@ class App extends Component {
 
 
   resetPartie = () => {
+    this.usedLetters.clear();
     this.resetKeys();
     this.generateWord();
     this.setState({
@@ -184,7 +185,7 @@ class App extends Component {
       attempt: 10,
       winned: false,
       msg: "",
-      finshed: false , 
+      finshed: false 
     });
   };
 
@@ -229,6 +230,7 @@ class App extends Component {
               {this.state.msg}
             </h2>
           </div>
+          
           <div
             id="placeholderContainer"
             style={{
@@ -236,11 +238,9 @@ class App extends Component {
               fontSize: "50px"
             }}
           >
-            {this.state.placeholder}
-            {/*this.generatePlaceHolders()*/}
+              {this.state.placeholder}          
           </div>
           <span />
-          {/*<Placeholder letters={[]}/>*/}
           <div id="score">
             <h3>Score</h3>
             <span>{this.state.score}</span>
