@@ -20,12 +20,15 @@ const keys = [
   "N",
   "O",
   "P",
+  "Q",
   "R",
-  "U",
   "S",
   "T",
-  "Y",
+  "U",
+  "V",
   "W",
+  "X",
+  "Y",
   "Z"
 ];
 
@@ -109,15 +112,7 @@ class App extends Component {
       return;
     }
 
-    // check if player finish all attempts given .
-    if (this.state.attempt === 0) {
-      this.setState({
-        winned: false,
-        msg: "you are loser :(",
-        finshed: true
-      });
-      return;
-    }
+    
 
     let item = `.item_${key}`;
     let count = this.char_count(key);
@@ -146,6 +141,17 @@ class App extends Component {
       });
       return;
     }
+
+    // check if player finish all attempts given .
+    if (this.state.attempt === 1) {
+      this.setState({
+        winned: false,
+        msg: "you are loser :(",
+        finshed: true
+      });
+      return;
+    }
+
   };
 
   // Render keys
