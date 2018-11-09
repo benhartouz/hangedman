@@ -22,6 +22,14 @@
   color: #61dafb;
 }
 
+.body{
+  width: 500px;
+  overflow: hidden;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
 .key{
   background: #000000;
   color: #ffffff;
@@ -67,6 +75,30 @@
   width: 100px;
   margin: 0 auto;
   margin-top: 10px;
+}
+#placeholderContainer{
+  width: 400px;
+  margin: 10px;
+  float: left;
+}
+#keyboardContainer{
+  width: 400px;
+  margin: 20px;
+}
+#score{
+  float: left;
+}
+#score > h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+#score > span{
+  font-size: 18px;
+}
+.item-placeholder{
+  font-size: 50px;
+  margin:10px;
 }
 
 @keyframes App-logo-spin {
