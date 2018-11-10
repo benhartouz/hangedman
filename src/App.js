@@ -143,6 +143,7 @@ class App extends Component {
         msg: "you are loser :(",
         finshed: true
       });
+      //alert("The word is " + this.state.word);
       return;
     }
 
@@ -229,6 +230,7 @@ class App extends Component {
           <div>
             <h2 className={this.state.winned ? "win" : "lose"}>
               {this.state.msg}
+              <h3 className={ (this.state.finshed == "") ? "hidden" : "" }>The word is : {this.state.word}</h3>
             </h2>
           </div>
           <div id="hangMainContainer">

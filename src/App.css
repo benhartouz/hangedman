@@ -104,6 +104,9 @@
 #hangMainContainer, #container {
   float: left;
 } 
+.hidden{
+  visibility: hidden;
+}
 
 @keyframes App-logo-spin {
   from {
