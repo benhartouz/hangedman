@@ -4,7 +4,7 @@ The game of the hanged person is to guess a word or a sentence, trying alternate
 
 In the classic game, each unsuccessful attempt (unused letter) advances the drawing of a hanged man, and when the drawing is complete (head, body, limbs), one has lost. It's a turn-based game, and the person who makes the ultimate bad test has lost
 
-Demo : []
+Demo : [https://unruffled-kare-8237c4.netlify.com/]
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
