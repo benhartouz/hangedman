@@ -213,7 +213,9 @@ class App extends Component {
     console.log(this.state.placeholder);
     return (
       <div className="App">
-        <header className="App-header" />
+        <header className="App-header" >
+              <h1>HangMan Game</h1>  
+        </header>
         <div className="body">
           {this.state.finshed && (
             <div>

@@ -1,3 +1,11 @@
+## HangMan Game 
+
+The game of the hanged person is to guess a word or a sentence, trying alternately possible letters. Each essay reveals the corresponding letters in the schema of the text to guess.
+
+In the classic game, each unsuccessful attempt (unused letter) advances the drawing of a hanged man, and when the drawing is complete (head, body, limbs), one has lost. It's a turn-based game, and the person who makes the ultimate bad test has lost
+
+Demo : []
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
