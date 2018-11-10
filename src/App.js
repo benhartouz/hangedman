@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import words from "./words";
+import HangMan from './components/HangMan';
 
 const keys = [
   "A",
@@ -32,16 +33,6 @@ const keys = [
   "Z"
 ];
 
-const Placeholder = ({ letters }) => {
-  return (
-    <div>
-      {letters.map(letter => {
-        return <span>{letter}</span>;
-      })}
-    </div>
-  );
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +45,8 @@ class App extends Component {
       msg: "",
       word: "",
       finshed: false,
-      placeholder: ""
+      placeholder: "" , 
+      step : 0
     };
     this.usedLetters = new Set();
   }
@@ -127,7 +119,8 @@ class App extends Component {
       element.className += " error";
       this.setState({
         attempt: this.state.attempt - 1,
-        score  : this.state.score - 1
+        score  : this.state.score - 1 , 
+        step : this.state.step + 1 
       });
     }
     document.getElementById(`key_${key}`).setAttribute("disabled", "disabled");
@@ -192,7 +185,8 @@ class App extends Component {
       attempt: 10,
       winned: false,
       msg: "",
-      finshed: false 
+      finshed: false ,
+      step : 0
     });
   };
 
@@ -237,24 +231,28 @@ class App extends Component {
               {this.state.msg}
             </h2>
           </div>
-          
-          <div
-            id="placeholderContainer"
-            style={{
-              letterSpacing: "20px",
-              fontSize: "50px"
-            }}
-          >
-              {this.state.placeholder}          
+          <div id="hangMainContainer">
+            <HangMan step={this.state.step}/>
           </div>
-          <span />
-          <div id="score">
-            <h3>Score</h3>
-            <span>{this.state.score}</span>
-            <h3>Attempt</h3>
-            <span>{this.state.attempt}</span>
+          <div id="container">
+            <div
+              id="placeholderContainer"
+              style={{
+                letterSpacing: "20px",
+                fontSize: "50px"
+              }}
+            >
+                {this.state.placeholder}          
+            </div>
+            <span />
+            <div id="score">
+              <h3>Score</h3>
+              <span>{this.state.score}</span>
+              <h3>Attempt</h3>
+              <span>{this.state.attempt}</span>
+            </div>
+            <div id="keyboardContainer">{this.renderKeys()}</div>  
           </div>
-          <div id="keyboardContainer">{this.renderKeys()}</div>
         </div>
       </div>
     );
