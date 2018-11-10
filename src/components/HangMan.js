@@ -7,6 +7,7 @@ class HangMan extends Component {
        this.state = {
            step : 0
        }
+       console.log("props:",props);
        this.contextCanvas = "";
    }
    
@@ -22,20 +23,17 @@ class HangMan extends Component {
       console.log("props.step:",props.step);
       if(state.step !== props.step){
         return {
-            currentState  : props.step
+            step  : props.step
         }
       }
       return null;
   }
 
-  componentDidUpdate(props,state){
-      console.log("componentDidUpdate:",props);
-      console.log("componentDidUpdate:",state);
-      if(state.step !== props.step){
+  componentDidUpdate(prevProps,prevState){
+      if(prevState.step !== this.state.step){
         this.setState({
-            step : this.state.currentState
+            step : this.state.step
         });
-        console.log("this.state.step:",this.state.step);
         for(let ii=0 ; ii < this.state.step ; ii++){
             this.draw(ii);
         }
